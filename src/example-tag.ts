@@ -1,5 +1,8 @@
+import { isJsonParse } from './helper';
+
 class ExampleTag extends HTMLElement {
   message: string = 'Lorem ipsum dolor.';
+  data: Array<number> = [];
 
   static get is(): string {
     return 'example-tag';
@@ -19,7 +22,17 @@ class ExampleTag extends HTMLElement {
   }
 
   static get observedAttributes() {
-    return ['message'];
+    return ['message', 'data'];
+  }
+
+  attributeChangedCallback(name, oldValue, newValue) {
+    console.log(`attributeChangedCallback(${name}, ${oldValue}, ${newValue})`);
+
+    if (isJsonParse(newValue)) {
+      this[name] = JSON.parse(newValue);
+    } else {
+      this[name] = newValue;
+    }
   }
 
   render() {

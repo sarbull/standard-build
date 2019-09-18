@@ -5,7 +5,27 @@
   <title>Standard Build</title>
 </head>
 <body>
+  <h1>example-tag</h1>
   <example-tag message="sit amet."></example-tag>
 
+  <hr/>
+
+  <h1>example-lit</h1>
+  <example-lit message="Lorem ipsum dolor."></example-lit>
+
+
+  <script type="module">
+    const exampleTag = document.querySelector('example-tag');
+    const exampleLit = document.querySelector('example-lit');
+
+
+    exampleTag.setAttribute('data', JSON.stringify([1, 2, 3]));
+    exampleLit.setAttribute('data', JSON.stringify([1, 2, 3]));
+
+    setTimeout(() => {
+      exampleTag.setAttribute('message', 'Is this really working?');
+      exampleLit.setAttribute('message', 'Is this real?');
+    }, 5000);
+  </script>
 </body>
 </html>
