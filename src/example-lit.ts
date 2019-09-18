@@ -16,28 +16,30 @@ class ExampleLit extends LitElement {
     };
   }
 
+
+  reverseMessage(message) {
+    return message ? message.split('').reverse().join('') : '';
+  }
+
   render() {
     console.log(this.data);
 
     return html`
       <div>
+        <style>
+          :host {
+            display: block;
+            border:1px solid #f00;
+          }
+        </style>
+
         <p>The message is: "${this.message}"</p>
 
         <p>The reversed message is: "${this.reverseMessage(this.message)}"</p>
-
-        ${this.data.map((el) => {
-          return `${el} `;
-        })}
       </div>
     `;
   }
-
-  reverseMessage(message) {
-    return message.split('').reverse().join('');
-  }
 }
-
-customElements.define(ExampleLit.is, ExampleLit);
 
 export {
   ExampleLit

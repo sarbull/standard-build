@@ -38,14 +38,19 @@ class ExampleTag extends HTMLElement {
   render() {
     return `
       <div id="example-tag">
+        <style>
+          :host {
+            display: block;
+            border:1px solid #f00;
+          }
+        </style>
+
         <p>My example-tag component contains: <slot></slot>.</p>
         <p>Message is: ${this.getAttribute('message') || this.message}</p>
       </div>
     `;
   }
 }
-
-window.customElements.define(ExampleTag.is, ExampleTag);
 
 export {
   ExampleTag
