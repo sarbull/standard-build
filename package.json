@@ -1,0 +1,26 @@
+{
+  "name": "standard-build",
+  "version": "0.0.0",
+  "description": "Standard build",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server --mode development --progress --color"
+  },
+  "keywords": [
+    "standard",
+    "build",
+    "javascript",
+    "typescript"
+  ],
+  "author": "Cezar Sirbu <cezar.sirbu.e@thalesdigital.io>",
+  "license": "MIT",
+  "devDependencies": {
+    "html-webpack-plugin": "^3.2.0",
+    "ts-loader": "^6.1.0",
+    "typescript": "^3.6.3",
+    "webpack": "^4.40.2",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.8.1"
+  }
+}
