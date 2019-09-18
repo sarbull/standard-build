@@ -1,9 +1,12 @@
 const packageJson = require('./package.json');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.ts',
+  entry: {
+    index: './src/index.ts'
+  },
   output: {
     filename: `${packageJson.name}-${packageJson.version}.js`,
     path: path.resolve(__dirname, 'dist')
@@ -20,6 +23,9 @@ module.exports = {
     extensions: [ '.ts', '.tsx', '.js' ]
   },
   plugins: [
+    new CleanWebpackPlugin({
+      verbose: true
+    }),
     new HtmlWebpackPlugin({template: './src/index.html'})
   ]
 };
