@@ -3,7 +3,6 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  devtool: 'inline-source-map',
   entry: './src/index.ts',
   output: {
     filename: `${packageJson.name}-${packageJson.version}.js`,

@@ -1,3 +1,3 @@
 export class Example {
-  message: string;
+  message: string = 'Lorem ipsum dolor.';
 }
