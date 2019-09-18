@@ -1,5 +1,3 @@
-import { Example } from './example.class';
+import { ExampleTag } from './example-tag.class';
 
-const example = new Example();
-
-console.log(example);
+console.log(ExampleTag);
