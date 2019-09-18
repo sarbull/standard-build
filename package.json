@@ -1,6 +1,6 @@
 {
   "name": "standard-build",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Standard build",
   "main": "src/index.ts",
   "scripts": {
